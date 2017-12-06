@@ -1,14 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.Query"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller_SeniorQuery">
+    <children>
+        <VBox prefHeight="664.0" prefWidth="1000.0">
+            <children>
+                <SplitPane orientation="VERTICAL" prefHeight="208.0" prefWidth="1000.0">
+                    <items>
+                        <VBox prefHeight="219.0" prefWidth="1000.0">
+                            <children>
+                                <Pane prefHeight="32.0" prefWidth="882.0" />
+                                <HBox prefHeight="50.0" prefWidth="882.0">
+                                    <children>
+                                        <Pane prefHeight="100.0" prefWidth="250.0">
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="18.0" text="时间：" />
+                                                <DatePicker fx:id="DatePicker_start" layoutX="57.0" layoutY="14.0" promptText="Eg : XXXX-XX-XX" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="71.0" prefWidth="250.0">
+                                            <children>
+                                                <Label layoutX="8.0" layoutY="18.0" text="至" />
+                                                <DatePicker fx:id="DatePicker_end" layoutX="32.0" layoutY="14.0" promptText="Eg : XXXX-XX-XX" />
+                                            </children>
+                                            <HBox.margin>
+                                                <Insets />
+                                            </HBox.margin>
+                                        </Pane>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </HBox>
+                                <HBox prefHeight="50.0" prefWidth="886.0">
+                                    <children>
+                                        <Pane prefHeight="194.0" prefWidth="250.0">
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="22.0" text="纬度：大于" />
+                                                <TextField fx:id="textField_latitude_start" layoutX="92.0" layoutY="18.0" promptText="单位：度 范围:-90至90" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="194.0" prefWidth="250.0">
+                                            <children>
+                                                <Label layoutX="23.0" layoutY="22.0" text="小于" />
+                                                <TextField fx:id="textField_latitude_end" layoutX="60.0" layoutY="18.0" promptText="单位：度 范围:-90至90" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="194.0" prefWidth="250.0">
+                                            <children>
+                                                <Label layoutY="22.0" text="经度：大于" />
+                                                <TextField fx:id="textField_longitude_start" layoutX="75.0" layoutY="18.0" promptText="单位：度 范围:-180至180" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="194.0" prefWidth="250.0">
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="22.0" text="小于" />
+                                                <TextField fx:id="textField_longitude_end" layoutX="57.0" layoutY="18.0" promptText="单位：度 范围:-180至180" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="50.0" prefWidth="886.0">
+                                    <children>
+                                        <Pane prefHeight="194.0" prefWidth="250.0">
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="22.0" text="深度：大于" />
+                                                <TextField fx:id="textField_depth_start" layoutX="92.0" layoutY="18.0" promptText="单位：千米" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="194.0" prefWidth="250.0">
+                                            <children>
+                                                <Label layoutX="23.0" layoutY="22.0" text="小于" />
+                                                <TextField fx:id="textField_depth_end" layoutX="60.0" layoutY="18.0" promptText="单位：千米" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="194.0" prefWidth="250.0">
+                                            <children>
+                                                <TextField fx:id="textField_magnitude_start" layoutX="75.0" layoutY="18.0" promptText="Eg : X.X" />
+                                                <Label layoutY="22.0" text="震级：大于" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="194.0" prefWidth="250.0">
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="22.0" text="小于" />
+                                                <TextField fx:id="textField_magnitude_end" layoutX="60.0" layoutY="18.0" promptText="Eg : X.X" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <Pane prefHeight="42.0" prefWidth="998.0">
+                                    <children>
+                                        <Button fx:id="button_query" layoutX="472.0" layoutY="5.0" mnemonicParsing="false" text="查    询" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </VBox>
+                    </items>
+                </SplitPane>
+                <SplitPane prefHeight="489.0" prefWidth="1000.0">
+                    <items>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <TabPane prefHeight="598.0" prefWidth="998.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab fx:id="tabPane_table" text="显示到表格">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView prefHeight="314.0" prefWidth="998.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="tableColumn_magnitude" prefWidth="75.0" text="震级" />
+                                                                <TableColumn fx:id="tableColumn_Date" prefWidth="175.0" text="发震时刻" />
+                                                                <TableColumn fx:id="tableColumn_latitude" minWidth="0.0" prefWidth="85.0" text="纬度" />
+                                                                <TableColumn fx:id="tableColumn_longitude" minWidth="0.0" prefWidth="86.0" text="经度" />
+                                                                <TableColumn fx:id="tableColumn_depth" prefWidth="93.0" text="深度" />
+                                                                <TableColumn fx:id="tableColumn_region" prefWidth="485.0" text="参考位置" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <Pane layoutY="316.0" prefHeight="126.0" prefWidth="998.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="tabPane_map" text="显示到地图">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </VBox>
+                    </items>
+                </SplitPane>
+            </children>
+        </VBox>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

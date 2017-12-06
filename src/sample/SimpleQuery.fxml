@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller_SimpleQuery">
     <columnConstraints>
         <ColumnConstraints />
     </columnConstraints>
@@ -28,7 +28,7 @@
                   <Pane prefHeight="200.0" prefWidth="200.0" />
                   <Pane prefHeight="100.0" prefWidth="484.0">
                      <children>
-                        <Button fx:id="query" layoutX="184.0" layoutY="21.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="117.0" text="查      询" textAlignment="CENTER">
+                        <Button fx:id="button_query" layoutX="184.0" layoutY="21.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="117.0" text="查      询" textAlignment="CENTER">
                            <font>
                               <Font name="System Italic" size="20.0" />
                            </font>
@@ -42,9 +42,9 @@
          <center>
             <VBox prefHeight="322.0" prefWidth="484.0" BorderPane.alignment="CENTER">
                <children>
-                  <DatePicker fx:id="UTC_date" prefHeight="50.0" prefWidth="484.0" promptText="Eg : XXXX-XX-XX" />
+                  <DatePicker fx:id="DatePicker_UTCdate" prefHeight="50.0" prefWidth="484.0" promptText="Eg : XXXX-XX-XX" />
                   <Pane prefHeight="200.0" prefWidth="200.0" />
-                  <TextField fx:id="magnitude" prefHeight="50.0" prefWidth="484.0" promptText="Eg : X.X" />
+                  <TextField fx:id="textField_magnitude" prefHeight="50.0" prefWidth="484.0" promptText="Eg : X.X" />
                </children>
             </VBox>
          </center>

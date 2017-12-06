@@ -12,9 +12,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("SimpleQuery.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SeniorQuery.fxml"));
         primaryStage.setTitle("Hello World");
-
         primaryStage.setScene(new Scene(root, root.getLayoutX(), root.getLayoutY()));
         primaryStage.setResizable(false);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
