@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+   <children>
+      <BorderPane prefHeight="646.0" prefWidth="884.0">
+         <bottom>
+            <HBox prefHeight="137.0" prefWidth="884.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Pane prefHeight="100.0" prefWidth="484.0">
+                     <children>
+                        <Button fx:id="query" layoutX="184.0" layoutY="21.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="117.0" text="查      询" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Italic" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox prefHeight="322.0" prefWidth="484.0" BorderPane.alignment="CENTER">
+               <children>
+                  <DatePicker fx:id="UTC_date" prefHeight="50.0" prefWidth="484.0" promptText="Eg : XXXX-XX-XX" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <TextField fx:id="magnitude" prefHeight="50.0" prefWidth="484.0" promptText="Eg : X.X" />
+               </children>
+            </VBox>
+         </center>
+         <left>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="351.0" prefWidth="205.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="45.0" prefWidth="170.0" text="日期" textAlignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="170.0" text="震级" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Italic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </left>
+         <right>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </right>
+         <top>
+            <Pane prefHeight="154.0" prefWidth="884.0" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </children>
+</GridPane>

@@ -6,13 +6,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("SimpleQuery.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+
+        primaryStage.setScene(new Scene(root, root.getLayoutX(), root.getLayoutY()));
+        primaryStage.setResizable(false);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        primaryStage.setX((screenSize.getWidth() - primaryStage.getWidth()) / 2);
+        primaryStage.setY((screenSize.getHeight() - primaryStage.getHeight()) / 2);
         primaryStage.show();
     }
 
