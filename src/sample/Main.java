@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("SeniorQuery.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Earthquake Query");
         primaryStage.setScene(new Scene(root, root.getLayoutX(), root.getLayoutY()));
         primaryStage.setResizable(false);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -21,6 +21,7 @@ public class Main extends Application {
         primaryStage.setY((screenSize.getHeight() - primaryStage.getHeight()) / 2);
         primaryStage.show();
     }
+
 
 
     public static void main(String[] args) {
