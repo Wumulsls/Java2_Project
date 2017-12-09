@@ -4,6 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+
+
 
 public class Controller_SeniorQuery {
 
@@ -29,6 +33,40 @@ public class Controller_SeniorQuery {
     TextField textField_magnitude_start;
     @FXML
     TextField textField_magnitude_end;
+    @FXML
+    TableView earthQuakeTable;
+    @FXML
+    TableColumn tableColumn_magnitude;
+    @FXML
+    TableColumn tableColumn_Date;
+    @FXML
+    TableColumn tableColumn_latitude;
+    @FXML
+    TableColumn tableColumn_longitude;
+    @FXML
+    TableColumn tableColumn_depth;
+    @FXML
+    TableColumn tableColumn_region;
+
+    public Controller_SeniorQuery(){
+
+    }
+    @FXML
+    private void initialize() {
+        tableColumn_magnitude.setCellValueFactory(cellData -> EarthQuakesTable.getMagnitude());
+
+        tableColumn_Date.setCellValueFactory(cellData -> EarthQuakesTable.getDate());
+
+        tableColumn_latitude.setCellValueFactory(cellData -> EarthQuakesTable.getLatitude());
+
+        tableColumn_longitude.setCellValueFactory(cellData -> EarthQuakesTable.getLongitude());
+
+        tableColumn_depth.setCellValueFactory(cellData -> EarthQuakesTable.getDepth());
+
+        tableColumn_region.setCellValueFactory(cellData -> EarthQuakesTable.getRegion());
+
+    }
+
 
     private static String start_year;
     private static String start_month;
@@ -113,6 +151,47 @@ public class Controller_SeniorQuery {
         start_magnitude = !getStart_magnitude().equals("") ? getStart_magnitude() : "0";
         end_magnitude = !getEnd_magnitude().equals("") ? getEnd_magnitude() : "10";
 
+
+    }
+    static class EarthQuakesTable {
+        private  static String magnitude ;
+        private  static String Date ;
+        private  static String latitude ;
+        private  static String longitude ;
+        private  static String depth ;
+        private  static String region ;
+        EarthQuakesTable(){
+            this.magnitude = "test ";
+            this.Date = "test ";
+            this.latitude = "test";
+            this.longitude = "test";
+            this.depth = " test";
+            this.region = "test";
+        }
+
+        static String getMagnitude(){
+            return magnitude;
+        }
+
+        static String getDate() {
+            return Date;
+        }
+
+        static String getLatitude() {
+            return latitude;
+        }
+
+        static String getLongitude() {
+            return longitude;
+        }
+
+        static String getDepth() {
+            return depth;
+        }
+
+        static String getRegion() {
+            return region;
+        }
 
     }
 
